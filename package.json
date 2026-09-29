@@ -1,0 +1,12 @@
+{
+  "name": "openpave-capabilities",
+  "version": "1.0.0",
+  "private": true,
+  "description": "cnrai-curated catalog of Capabilities (MCP servers) for OpenPAVE's experimental Capabilities feature (#2638).",
+  "scripts": {
+    "lint": "node scripts/lint-capabilities.js"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
