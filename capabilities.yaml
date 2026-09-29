@@ -1,0 +1,24 @@
+# openpave-capabilities — cnrai-curated catalog of Capabilities (MCP servers).
+# Consumed by OpenPAVE's experimental Capabilities feature (cnrai/openpave#2638).
+#
+# Schema (v1):
+#   mcps:
+#     <id>:                        # unique within this repo; runtime ID is mcp:<id>
+#       name: <display name>
+#       description: <one-liner shown on the Capabilities grid>
+#       transport: http            # v1: remote only (Streamable HTTP, SSE fallback)
+#       url: <server base URL>
+#       version: <catalog version string>
+#       tags: [<free-form>]
+#       auth:
+#         type: none | oauth2 | bearer
+#         # oauth2: authorizeUrl/tokenUrl/scopes/clientId are PINS (fallbacks) —
+#         #   runtime discovery is primary: RFC 9728 Protected Resource Metadata
+#         #   -> RFC 8414 AS metadata, starting from the server's 401
+#         #   WWW-Authenticate. clientId omitted => RFC 7591 dynamic client
+#         #   registration attempted. refresh_token is OPTIONAL: when absent the
+#         #   client falls back to a re-consent card.
+#         # bearer: header + prefix + tokenLabel (static PAT / API key stored via
+#         #   the tokens routes; value never appears in this file).
+# Lint (added by the implementing fleet): schema check + id charset + url https.
+mcps: {}
